@@ -1,0 +1,199 @@
+.todo-app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eef2ff 0%, #fdf2f8 100%);
+  padding: 32px 16px;
+  box-sizing: border-box;
+}
+
+.todo-card {
+  width: min(700px, 100%);
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(79, 70, 229, 0.12);
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+.todo-card h1 {
+  margin: 0 0 24px;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1f2937;
+}
+
+.add-task-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.add-task-form input {
+  flex: 1;
+  padding: 14px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.add-task-form input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
+}
+
+.add-task-form button,
+.filter-bar button,
+.task-actions button {
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.add-task-form button {
+  padding: 14px 18px;
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: white;
+  font-weight: 600;
+}
+
+.add-task-form button:hover,
+.filter-bar button:hover,
+.task-actions button:hover {
+  transform: translateY(-1px);
+}
+
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-bar button {
+  padding: 10px 14px;
+  background: #f3f4f6;
+  color: #374151;
+  font-weight: 600;
+}
+
+.filter-bar button.active {
+  background: #ede9fe;
+  color: #4c1d95;
+}
+
+.task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.task-item.done {
+  background: #ecfdf5;
+  border-color: #86efac;
+}
+
+.task-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.task-main input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  accent-color: #16a34a;
+}
+
+.task-description {
+  font-size: 1rem;
+  color: #111827;
+  word-break: break-word;
+}
+
+.task-item.done .task-description {
+  text-decoration: line-through;
+  color: #6b7280;
+}
+
+.task-input {
+  flex: 1;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 1rem;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.task-actions button {
+  padding: 8px 12px;
+  font-weight: 600;
+}
+
+.edit-btn {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.save-btn {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.cancel-btn {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.empty-state {
+  margin: 0;
+  text-align: center;
+  color: #6b7280;
+  padding: 20px;
+  background: #f9fafb;
+  border: 1px dashed #d1d5db;
+  border-radius: 12px;
+}
+
+@media (max-width: 640px) {
+  .todo-card {
+    padding: 22px 16px;
+  }
+
+  .add-task-form,
+  .task-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .task-main {
+    width: 100%;
+  }
+
+  .task-actions {
+    justify-content: flex-end;
+  }
+}
